@@ -90,7 +90,7 @@ public class Main {
                     want to do!
                     ---------------------------
                     [1] - Add/Remove cars
-                    [2] - Outstock
+                    [2] - Out of stock
                     [3] - Upcomming
                     [4] - Exit
                     ---------------------------
@@ -119,6 +119,7 @@ public class Main {
                     """);
                 adminSwitch();
             case 2:
+                System.out.println("Choose a vehicle to mark as out of stock");
             case 3:
 
             default:
