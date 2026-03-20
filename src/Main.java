@@ -118,12 +118,22 @@ public class Main {
                     ///////////////////////////
                     """);
                 adminSwitch();
+                break;
             case 2:
-                System.out.println("Choose a vehicle to mark as out of stock");
+                System.out.print("Car List: " + carList +
+                """
+                
+                """);
+                System.out.print("Choose a vehicle to mark as out of stock");
+                carList.remove(sc.nextLine());
+                break;
             case 3:
-
+                System.out.print("Type a car and mark it as Upcomming (Car - Upcomming): ");
+                carList.add(sc.nextLine());
+                break;
             default:
                 System.out.println("See you next time!");
+                break;
         }
     }
     public static void adminSwitch() {
