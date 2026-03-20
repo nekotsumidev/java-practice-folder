@@ -89,11 +89,10 @@ public class Main {
                     Type in terminal what do u
                     want to do!
                     ---------------------------
-                    [1] - Add cars
-                    [2] - Remove cars
-                    [3] - Outstock
-                    [4] - Upcomming
-                    [5] - Exit
+                    [1] - Add/Remove cars
+                    [2] - Outstock
+                    [3] - Upcomming
+                    [4] - Exit
                     ---------------------------
                     ///////////////////////////
                     """);
@@ -120,6 +119,7 @@ public class Main {
                     """);
                 adminSwitch();
             case 2:
+            case 3:
 
             default:
                 System.out.println("See you next time!");
@@ -138,7 +138,7 @@ public class Main {
                 System.out.print(carList);
                 break;
             case 2:
-                System.out.print("Type car's name: ");
+                System.out.print("Type vehicle's name to delete from system: ");
                 car = sc.nextLine();
                 carList.remove(car);
                 System.out.print(carList);
