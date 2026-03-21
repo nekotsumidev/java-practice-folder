@@ -18,7 +18,7 @@ public class Main {
 
         switch (password) {
             case 123:
-                System.out.println("Welcome Luccas!");
+                System.out.println("Welcome User!");
                 userText();
                 userEngine();
                 break;
@@ -29,6 +29,7 @@ public class Main {
                 break;
             default:
                 System.out.println("No mode has found!");
+                userIdentify();
                 break;
         }
     }
@@ -45,6 +46,7 @@ public class Main {
                     [2] - Wish list
                     [3] - On the way
                     [4] - My cart
+                    [5] - Switch account
                     [5] - Exit
                     ---------------------------
                     ///////////////////////////
@@ -65,18 +67,26 @@ public class Main {
         switch (userSelection) {
             case 1:
                 System.out.print(carList);
+                userText();
                 break;
             case 2:
                 System.out.print(wishList);
+                userText();
                 break;
             case 3:
                 System.out.print(onWay);
+                userText();
                 break;
             case 4:
                 System.out.print(myCart);
+                userText();
+                break;
+            case 5:
+                userIdentify();
                 break;
             default:
                 System.out.println("No category has found!");
+                userText();
                 break;
         }
     }
@@ -92,7 +102,8 @@ public class Main {
                     [1] - Add/Remove cars
                     [2] - Out of stock
                     [3] - Upcomming
-                    [4] - Exit
+                    [4] - Switch account
+                    [5] - Exit
                     ---------------------------
                     ///////////////////////////
                     """);
@@ -118,7 +129,7 @@ public class Main {
                     ///////////////////////////
                     """);
                 adminSwitch();
-                break;
+                return;
             case 2:
                 System.out.print("Car List: " + carList +
                 """
@@ -126,11 +137,16 @@ public class Main {
                 """);
                 System.out.print("Choose a vehicle to mark as out of stock");
                 carList.remove(sc.nextLine());
-                break;
+                adminText();
+                return;
             case 3:
                 System.out.print("Type a car and mark it as Upcomming (Car - Upcomming): ");
                 carList.add(sc.nextLine());
-                break;
+                adminText();
+                return;
+            case 4:
+                userIdentify();
+                return;
             default:
                 System.out.println("See you next time!");
                 break;
@@ -147,18 +163,24 @@ public class Main {
                 car = sc.nextLine();
                 carList.add(car);
                 System.out.print(carList);
-                break;
+                adminText();
+                adminEngine();
+                return;
             case 2:
                 System.out.print("Type vehicle's name to delete from system: ");
                 car = sc.nextLine();
                 carList.remove(car);
                 System.out.print(carList);
-                break;
+                adminText();
+                adminEngine();
+                return;
             case 3:
                 adminText();
                 adminEngine();
-                sc.nextLine();
-                break;
+                return;
+            case 4:
+                userIdentify();
+                return;
             default:
                 System.out.println("No option has found!");
                 break;
