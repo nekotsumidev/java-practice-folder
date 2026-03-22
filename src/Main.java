@@ -21,16 +21,15 @@ public class Main {
                 System.out.println("Welcome User!");
                 userText();
                 userEngine();
-                break;
+                return;
             case 666:
                 System.out.println("Welcome Admin!");
                 adminText();
                 adminEngine();
-                break;
+                return;
             default:
                 System.out.println("No mode has found!");
                 userIdentify();
-                break;
         }
     }
     public static void userText() {
@@ -68,26 +67,25 @@ public class Main {
             case 1:
                 System.out.print(carList);
                 userText();
-                break;
+                return;
             case 2:
                 System.out.print(wishList);
                 userText();
-                break;
+                return;
             case 3:
                 System.out.print(onWay);
                 userText();
-                break;
+                return;
             case 4:
                 System.out.print(myCart);
                 userText();
-                break;
+                return;
             case 5:
                 userIdentify();
-                break;
+                return;
             default:
                 System.out.println("No category has found!");
                 userText();
-                break;
         }
     }
     public static void adminText() {
@@ -135,7 +133,7 @@ public class Main {
                 """
                 
                 """);
-                System.out.print("Choose a vehicle to mark as out of stock");
+                System.out.print("Choose a vehicle to mark as out of stock: ");
                 carList.remove(sc.nextLine());
                 adminText();
                 return;
@@ -178,12 +176,10 @@ public class Main {
                 adminText();
                 adminEngine();
                 return;
-            case 4:
-                userIdentify();
-                return;
             default:
                 System.out.println("No option has found!");
-                break;
+                adminText();
+                adminEngine();
         }
     }
 }
